@@ -1,10 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 
 const Main = (props) => {
-  // eslint-disable-next-line react/prop-types
   const {movieName, movieGenre, movieYear} = props;
-  // eslint-disable-next-line react/prop-types
   const {movies} = props;
 
   return (
@@ -139,6 +138,14 @@ const Main = (props) => {
       </div>
     </React.Fragment>
   );
+};
+
+
+Main.propTypes = {
+  movieName: PropTypes.string.isRequired,
+  movieGenre: PropTypes.string.isRequired,
+  movieYear: PropTypes.number.isRequired,
+  movies: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 
