@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 
 
-const handleListHeaderClick = () => {alert('click mf')};
+const handleListHeaderClick = () => {};
 
 
 const App = (props) => {
