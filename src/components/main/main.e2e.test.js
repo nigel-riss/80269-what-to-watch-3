@@ -17,17 +17,15 @@ it(`<Main /> header link is clicked`, () => {
         movieGenre={`movieGenre`}
         movieYear={2008}
         movies={[`Ip Man`, `Ip Man 2`]}
-        onHeaderClick={handleHeaderLinkClick}
+        onListHeaderClick={handleHeaderLinkClick}
       />
   );
 
-  const movieHeaders = main.find(`.small-movie-card__link`).first();
+  const movieHeaders = main.find(`.small-movie-card__link`);
 
-  movieHeaders.props().onClick();
+  movieHeaders.forEach((node) => {
+    node.props().onClick();
+  });
 
-  // movieHeaders.forEach((node) => {
-  //   node.props().onClick();
-  // });
-
-  expect(handleHeaderLinkClick.mock.calls.length).toBe(1);
+  expect(handleHeaderLinkClick.mock.calls.length).toBe(2);
 });
