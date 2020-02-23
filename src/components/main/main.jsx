@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 const Main = (props) => {
   const {movieName, movieGenre, movieYear} = props;
   const {movies} = props;
+  const {onListHeaderClick} = props;
 
   return (
     <React.Fragment>
@@ -108,7 +109,11 @@ const Main = (props) => {
                     <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
                   </div>
                   <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">
+                    <a
+                      className="small-movie-card__link"
+                      href="movie-page.html"
+                      onClick={onListHeaderClick}
+                    >
                       {movie}
                     </a>
                   </h3>
@@ -146,6 +151,7 @@ Main.propTypes = {
   movieGenre: PropTypes.string.isRequired,
   movieYear: PropTypes.number.isRequired,
   movies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onListHeaderClick: PropTypes.func.isRequired,
 };
 
 
