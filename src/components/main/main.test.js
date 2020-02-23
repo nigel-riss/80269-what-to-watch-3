@@ -9,6 +9,7 @@ it(`<Main /> renders correctly`, () => {
       movieGenre={`Infinity`}
       movieYear={2037}
       movies={[`2001: A Space Odyssey`, `Interstellar`, `Ad Astra`]}
+      onListHeaderClick={() => {}}
     />)
     .toJSON();
 

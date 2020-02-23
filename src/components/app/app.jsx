@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Main from "../main/main.jsx";
 
 
+const handleListHeaderClick = () => {alert('click mf')};
+
+
 const App = (props) => {
   const {movieName, movieGenre, movieYear} = props;
   const {movies} = props;
@@ -13,6 +16,7 @@ const App = (props) => {
       movieGenre={movieGenre}
       movieYear={movieYear}
       movies={movies}
+      onListHeaderClick={handleListHeaderClick}
     />
   );
 };
